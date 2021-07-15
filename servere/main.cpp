@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {   std::cout<<"server\n";
     QCoreApplication a(argc, argv);
-    int sock, listener;//hi
+    int sock, listener;//hif
         struct sockaddr_in addr;
         char buf[1024];
         int bytes_read;
