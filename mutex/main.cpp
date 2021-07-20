@@ -14,8 +14,8 @@
 #include <chrono>
 #include <unistd.h>
 
-
-using namespace std;;
+/*в данной программе реализуется создание потоков, а также продемонстрирован смысл использования мютекса и спинлока */
+using namespace std;
 pthread_mutex_t  mtx=PTHREAD_MUTEX_INITIALIZER;
 pthread_spinlock_t sp; //=PTHREAD_MUTEX_INITIALIZER;
 
@@ -38,18 +38,18 @@ void print(char ch)
 void *fthread (void *arg) {
 
     //pthread_spin_lock(&sp);
-    //pthread_mutex_lock(&mtx);
+    pthread_mutex_lock(&mtx);
     print('!');
-    //pthread_mutex_unlock(&mtx);
+    pthread_mutex_unlock(&mtx);
     //pthread_spin_unlock(&sp);
 }
 
 void *fthread1(void *arg) {
 
     //pthread_spin_lock(&sp);
-    //pthread_mutex_lock(&mtx);
+    pthread_mutex_lock(&mtx);
     print('?');
-    //pthread_mutex_unlock(&mtx);
+    pthread_mutex_unlock(&mtx);
     //pthread_spin_unlock(&sp);
 
 }

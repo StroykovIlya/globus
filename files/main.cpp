@@ -9,7 +9,8 @@
 #define MAX_WRITE 256
 
 using namespace std;
-
+/*данная программа позволяет записывать в файл информацию набранную в консоле, а затем считывать ее из файла
+ */
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);

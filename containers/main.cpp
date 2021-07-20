@@ -4,14 +4,16 @@
 #include <QList>
 #include <QMap>
 #include <sstream>
-#include<QString>
-#include<algorithm>
-#include<iterator>
+#include <QString>
+#include <algorithm>
+#include <iterator>
 using namespace std;
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
+    /*Программа позволяет производить следующие действия: 1)для вектора и списка формировать соответствующие контейнеры,
+добавлять элемент в конец, удалять выбранный по значению элемент, изменять выбранный по значению элемент на указанный
+2)для словаря формировать соответствующий контейнер а затем производить поиск значения по ключу*/
     cout << "choose a container for work: vector; list; map\n ";
     string TypeOfContainer;
     cin >> TypeOfContainer;

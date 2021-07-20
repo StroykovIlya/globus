@@ -1,31 +1,23 @@
 #include <QCoreApplication>
 #include <time.h>
 #include <stdio.h>
+#include <iostream>
 using namespace std;
+/*данная программа вычисляет время, которое понадобилось для определения квадрата числа
+*/
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
-    //Структуры для сохранения определенного времени
-       struct timespec mt1, mt2;
-       //Переменная для расчета дельты времени
-       long int tt;
-
-       //Определяем текущее время
-       clock_gettime (CLOCK_REALTIME, &mt1);
-
-       //Выводим определенное время на экран консоли
-       printf("seconds: %ld\n",mt1.tv_sec);
-       printf("nanoseconds: %ld\n",mt1.tv_nsec);
-
-       //Определяем текущее время
-       clock_gettime (CLOCK_REALTIME, &mt2);
-
-       //Рассчитываем разницу времени между двумя измерениями
-       tt=1000000000*(mt2.tv_sec - mt1.tv_sec)+(mt2.tv_nsec - mt1.tv_nsec);
-
-       //Выводим результат расчета на экран
-       printf ("wasted time: %ld ns\n",tt);
+    struct timespec mt1, mt2;
+    long int tt;
+    clock_gettime (CLOCK_REALTIME, &mt1);
+    int num1;
+    cout << "write number\n";
+    cin >> num1;
+    cout <<"square number:"<< num1*num1<<endl;
+    clock_gettime (CLOCK_REALTIME, &mt2);
+    tt=1000000000*(mt2.tv_sec - mt1.tv_sec)+(mt2.tv_nsec - mt1.tv_nsec);
+    printf ("wasted time for this operation: %ld ns\n",tt);
 
     return a.exec();
 }
